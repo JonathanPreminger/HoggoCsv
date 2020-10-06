@@ -1,0 +1,10 @@
+<%= flash[:notice] %>
+<%=form_tag import_brokers_path, multipart: true do%>
+<%= file_field_tag :file %>
+<%= submit_tag "Import from file"%>
+<% end %>
+
+<p>Borkers:</p>
+<% @brokers.each do |broker|%>
+<p>SIREN <% broker.id %> // <%broker.siren%></p>
+<% end %>
