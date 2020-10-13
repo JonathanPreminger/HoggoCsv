@@ -1,12 +1,17 @@
-<%= flash[:notice] %>
+
 <%=form_tag import_brokers_path, multipart: true do%>
-<%= file_field_tag :file %>
-<%= submit_tag "Import from file"%>
+
+
 <% end %>
-<%= button_to "Map Data", action: "map_data" %>
-<p>Borkers:</p>
-<p id="notice"><%= notice %></p>
-<%=@locations.inspect%>
+<nav aria-label="m-3">
+  <ol class="breadcrumb m-3">
+    <li class=""><%= file_field_tag :file, class:""%></li>
+    <li class=""><%= submit_tag "Import from file", class:""%></li>
+  </ol>
+</nav>
+
+
+
 <script type="text/javascript">
   function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
