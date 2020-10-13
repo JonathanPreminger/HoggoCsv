@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome !
 
-Things you may want to cover:
+==============================
 
-* Ruby version
+Please download the repo, 
 
-* System dependencies
+cd inside
 
-* Configuration
+run bundle
 
-* Database creation
+run rails db:create db:migrate
 
-* Database initialization
+run rails s
 
-* How to run the test suite
+Go to your localhost:3000,
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+then upload the csv with the button import at the root page,
 
-* ...
+
+refresh the page, you will see all the Brokers on the map,
+
+
+on the right side you can find a particular broker if you have his Siren number,
+
+
+the search will lead to the show page of this broker, the page will display information on the broker and display his position on a map.
+
+
+==============================
+
+
+Thank you for your attention.
