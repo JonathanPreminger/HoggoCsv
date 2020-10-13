@@ -5,6 +5,7 @@ class Broker < ApplicationRecord
   require 'activerecord-import/base'
 
   validates :siren, presence: true, allow_nil: false
+  validates_uniqueness_of :siren
   scope :with_localisation, -> { where('latitude is not null') }
 
   def self.import_broker_data(file)
