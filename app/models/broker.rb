@@ -14,9 +14,7 @@ class Broker < ApplicationRecord
       brokers << row.to_h
     end
     Broker.import brokers, recursive: true
-    #AssignLocalisationBrokerWorker.perform_async
-    insee_data_siren = InseeApi.new
-    insee_data_siren.query
+    AssignLocalisationBrokerWorker.perform_async
   end
 
 end

@@ -11,7 +11,7 @@ class BrokersController < ApplicationController
 
   def import
     Broker.import_broker_data(params[:file])
-    redirect_to root_url, notice: "Successfully imported data!!!"
+    redirect_to root_url, notice: "Successfully imported data! Begin geolocating all Broker imported... This could take a couple minutes"
   end
 
   def show
