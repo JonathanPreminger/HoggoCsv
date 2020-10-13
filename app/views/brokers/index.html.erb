@@ -1,17 +1,21 @@
-<%= flash[:notice] %>
+
 <%=form_tag import_brokers_path, multipart: true do%>
-<%= file_field_tag :file %>
-<%= submit_tag "Import from file"%>
+  <nav aria-label="m-3">
+    <ol class="breadcrumb m-3">
+      <li>Import a list of Siren, the BrokerApp will geolocate and map them just below</li>
+    </ol>
+    <ol class="breadcrumb m-3">
+      <li class=""><%= file_field_tag :file, class:""%></li>
+      <li class=""><%= submit_tag "Import from file", class:""%></li>
+    </ol>
+  </nav>
 <% end %>
-<%= button_to "Map Data", action: "map_data" %>
-<p>Borkers:</p>
-<p id="notice"><%= notice %></p>
-<%=@locations.inspect%>
+
 <script type="text/javascript">
   function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 3,
-    center: { lat: -28.024, lng: 140.887 },
+    center: { lat: 48.8534, lng: 2.3488 },
   });
   // Create an array of alphabetical characters used to label the markers.
   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -32,11 +36,11 @@
       "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
   });
 }
-const locations =
-[
-<%@locations.each do |loca|%>
-  {lat:<%=loca.values[0]%>, lng:<%=loca.values[1]%>},
-<%end%>
-  ];
+  const locations =
+  [
+  <%@locations.each do |loca|%>
+    {lat:<%=loca.values[0]%>, lng:<%=loca.values[1]%>},
+  <%end%>
+    ];
 
 </script>

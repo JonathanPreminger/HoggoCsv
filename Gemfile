@@ -21,6 +21,7 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'httparty', '~> 0.13.7'
 gem 'gmaps4rails'
 gem 'activerecord-import'
+gem 'sidekiq'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

@@ -1,19 +1,21 @@
 class BrokersController < ApplicationController
-
   before_action :set_broker, only: [:show, :edit, :update, :destroy]
+  include SearchBroker
 
   def index
+    @results = search(params[:search])
     @brokers = Broker.all
     @locations = []
     Broker.with_localisation.find_each {|broker| @locations << {lat: broker.latitude,lng: broker.longitude}}
   end
 
   def import
-    Broker.my_import(params[:file])
+    Broker.import_broker_data(params[:file])
     redirect_to root_url, notice: "Successfully imported data!!!"
   end
 
   def show
+    @results = search(params[:search])
   end
 
   def new
