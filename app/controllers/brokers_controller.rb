@@ -1,6 +1,7 @@
 class BrokersController < ApplicationController
   before_action :set_broker, only: [:show, :edit, :update, :destroy]
   include SearchBroker
+  include ImportBroker
 
   def index
     @results = search(params[:search])
@@ -10,8 +11,8 @@ class BrokersController < ApplicationController
   end
 
   def import
-    Broker.import_broker_data(params[:file])
-    redirect_to root_url, notice: "Successfully imported data! Begin geolocating all Broker imported... This could take a couple minutes"
+    import_broker_data(params[:file])
+    assign_localisation
   end
 
   def show

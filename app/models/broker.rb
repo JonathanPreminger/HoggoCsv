@@ -8,13 +8,4 @@ class Broker < ApplicationRecord
   validates_uniqueness_of :siren
   scope :with_localisation, -> { where('latitude is not null') }
 
-  def self.import_broker_data(file)
-    brokers = []
-    CSV.foreach(file.path, headers: true) do |row|
-      brokers << row.to_h
-    end
-    Broker.import brokers, recursive: true
-    AssignLocalisationBrokerWorker.perform_async
-  end
-
 end

@@ -9,6 +9,7 @@ class InseeApi
       latitude = request_hash["records"][0]["fields"]["geolocetablissement"][0]
       longitude = request_hash["records"][0]["fields"]["geolocetablissement"][1]
       Broker.update(broker.id, :latitude => latitude, :longitude => longitude)
+      puts "#{broker.id}"
     end
   end
 end
