@@ -7,7 +7,6 @@
 </nav>
 <div class="d-flex justify-content-center">
   <div class="card" style="width: 400px;">
-    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@broker.latitude},#{@broker.longitude}&zoom=12&size=400x400&markers=color:red%7Clabel:%7C#{@broker.latitude},#{@broker.longitude}&key=#{Rails.application.secrets[:google_maps_api_key]}" %>
     <div class="card-body">
       <% if @broker.name == nil %>
         <h5 class="card-title">We couldn't retrieve informations for this broker</h5>
@@ -21,4 +20,7 @@
       <%end%>
     </div>
   </div>
+</div>
+<div class="m-5">
+  <%= render "brokers/map_broker" %>
 </div>
