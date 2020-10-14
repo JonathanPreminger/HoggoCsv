@@ -2,15 +2,16 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="#"><%= link_to "Home", root_url%></a></li>
-    <li class="breadcrumb-item active" aria-current="page"><%= link_to "Broker", broker_path%></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= link_to @broker.siren, broker_path%></li>
   </ol>
 </nav>
 <div class="d-flex justify-content-center">
   <div class="card" style="width: 400px;">
     <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@broker.latitude},#{@broker.longitude}&zoom=12&size=400x400&markers=color:red%7Clabel:%7C#{@broker.latitude},#{@broker.longitude}&key=#{Rails.application.secrets[:google_maps_api_key]}" %>
     <div class="card-body">
-      <h5 class="card-title"><%= @broker.siren %></h5>
-      <p class="card-text"><%= @broker.latitude %>, <%= @broker.longitude %></p>
+      <h5 class="card-title"><%= @broker.name.upcase %></h5>
+      <p class="card-text"><%= @broker.address %> </p>
+      <p>SIREN : <%= @broker.siren %></p>
       <%= link_to(edit_broker_path) do %>
         <button type="button" class="btn btn-secondary">Edit</button>
       <%end%>
