@@ -1,4 +1,6 @@
 module ImportBroker
+  require './lib/insee_api.rb'
+
   def import_broker_data(file)
     brokers = []
     CSV.foreach(file.path, headers: true) do |row|
