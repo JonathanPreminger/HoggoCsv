@@ -1,13 +1,13 @@
 
-<%=form_tag import_brokers_path, multipart: true do%>
-  <nav aria-label="m-3">
-    <ol class="breadcrumb m-3">
-      <li>Import a list of Siren, the BrokerApp will geolocate and map them just below</li>
-    </ol>
-    <ol class="breadcrumb m-3">
+  <div class="jumbotron">
+    <h1 class="display-4 text-info">Welcome in the BrokerApp ! </h1>
+    <p class="lead">You can import a list of Siren, the BrokerApp will geolocate and map them just below for you !</p>
+    <p class="lead">Use the search bar to get more information about a particular broker.</p>
+  </div>
+  <%=form_tag import_brokers_path, multipart: true do%>
+    <ol class="breadcrumb m-4 border border-info">
       <li class=""><%= file_field_tag :file, class:""%></li>
       <li class=""><%= submit_tag "Import from file", class:""%></li>
     </ol>
-  </nav>
-<% end %>
+  <% end %>
 <%= render "brokers/map_all_brokers" %>

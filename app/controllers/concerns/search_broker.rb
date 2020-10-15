@@ -2,9 +2,9 @@ module SearchBroker
   def search(search)
     result = []
     if search
-      siren = Broker.find_by(siren: search)
-      if siren
-        redirect_to broker_path(siren.id)
+      broker = Broker.find_by(siren: search)
+      if broker
+        redirect_to broker_path(broker.id)
       else
         redirect_to root_url, notice: "We don't have this Siren in database"
       end
