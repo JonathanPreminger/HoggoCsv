@@ -6,14 +6,23 @@ Après avoir download le repo, cd inside, bundle, rails s et dans deux autres co
 Pour l’import, utiliser le Csv fourni.
 
 1 - Choix sur le produit
+
 2 - L’importation du CSV
+
 3 - L’asynchronisation des requêtes à l’Api Siren
+
 4 - La recherche permettant d’accéder au show
+
 5 - La page show
+
 6 - La carte des clusters à l’index
+
 7 - Les validations et scopes sur le model Broker
+
 8 - Sécurité 
+
 9 - Test unitaires
+
 10 - Limites et prolongement
 
 
