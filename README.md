@@ -102,6 +102,8 @@ Ils sont agrégés en cluster en fonction de l’échelle à laquelle on se trou
 
 Les clusters se réorganisent au fur et à mesure que l’on zoom ou dé-zoom. 
 
+En cliquant sur l'un des markers, on a une fenêtre d'information qui s'ouvre juste au-dessus afin de connaître son numéro de siren. Ce numéro peut ensuite être reporté dans la barre de recherche pour obtenir plus d'informations. C'est l'intérêt principal de l'app : pouvoir voir quels sont les brokers à proximité d'un lieu.
+
 L’api de google permet une fois notre token d’accès récupéré d’obtenir cette carte interactive. Le javascript nécessaire est placé dans un partial puis render dans la view index. 
 
 ====================================================================================================
