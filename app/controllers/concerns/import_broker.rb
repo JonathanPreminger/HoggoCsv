@@ -9,6 +9,10 @@ module ImportBroker
     brokers_supposed_to_be_imported = brokers.size
     Broker.import brokers, recursive: true
     brokers_actually_imported = Broker.all.count - number_of_brokers_before_import
+    check_integrity_of_import(brokers_supposed_to_be_imported, brokers_actually_imported)
+  end
+
+  def check_integrity_of_import(brokers_supposed_to_be_imported, brokers_actually_imported)
     if brokers_supposed_to_be_imported == brokers_actually_imported
       redirect_to root_url, notice: "Successfully imported Brokers! Begin geolocating all Brokers imported... Please refresh the page in a couple minutes for the mapping"
     else

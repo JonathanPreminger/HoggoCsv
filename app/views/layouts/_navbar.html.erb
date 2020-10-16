@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#" style="text-decoration:underline">Brokers</a>
+  <li class="navbar-brand" style="text-decoration:underline"><%= link_to "BrokerApp", brokers_path, style:"padding-bottom:35px;color:inherit;color:white;"%></li>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "About", brokers_path, style:"padding-bottom:35px;color:inherit;color:white;"%>
+        <%= link_to "Home", brokers_path, style:"padding-bottom:35px;color:inherit;color:white;"%>
       </li>
-    
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <%= form_tag brokers_path, method: :get do %>
