@@ -46,7 +46,7 @@ L’expérience utilisateur est amélioré grâce à l’asynchronisation des re
 
 À la racine on trouvera la page index.
 
-======================================================================================================================
+====================================================================================================
 
 
 2 - L’importation du CSV
@@ -59,7 +59,7 @@ Après l’import nous sommes redirigés sur l’index et un message flash nous 
 
 Le code de l’import se trouve dans un module pour ne pas surcharger le controlleur et lui laisser gérer uniquement les interactions liées aux requêtes.
 
-=====================================================================================
+====================================================================================================
 
 
 3 - L’asynchronisation des requêtes à l’Api Siren
@@ -70,7 +70,7 @@ L’idée est de fournir la meilleure expérience possible à l’utilisateur et
 
 Le code des calls à l’API est situé dans une classe dédiée: dans une classe InseeApi placé dans le dossier lib, elle est considérée comme étant un service.
 
-======================================================================================================================
+====================================================================================================
 
 
 4 - La recherche permettant d’accéder au show
@@ -83,7 +83,7 @@ Une fois que l’on se trouve sur la page show d’un siren, on peut directement
 
 Le code relatif à la recherche se trouve dans un module séparé.
 
-======================================================================================================================
+====================================================================================================
 
 
 5 - La page show
@@ -92,7 +92,7 @@ La page show présente une modal contenant la carte de localisation du broker, s
 
 Un breadcrumb permet de savoir où l’on se trouve dans l’archi de l’app et donne la possibilité de retourner sur la page Home.
 
-======================================================================================================================
+====================================================================================================
 
 6 - La carte des clusters à l’index 
 
@@ -104,7 +104,7 @@ Les clusters se réorganisent au fur et à mesure que l’on zoom ou dé-zoom.
 
 L’api de google permet une fois notre token d’accès récupéré d’obtenir cette carte interactive. Le javascript nécessaire est placé dans un partial puis render dans la view index. 
 
-======================================================================================================================
+====================================================================================================
 
 7 - Les validations et scopes sur le model Broker
 
@@ -114,13 +114,13 @@ Un scope a été créé sur les Broker possédant des données de localisation, 
 
 Choix à discuter avec le product owner : le scope n’a, par contre, pas été utilisé pour la recherche, on part du principe que même si un Broker n’est pas localisé il doit être accessible en recherche.
 
-======================================================================================================================
+====================================================================================================
 
 8 - Sécurité 
 
 Les tokens d’accès sont placés dans un fichier secrets.yml qui est lui-même listé dans le .gitignore. Le but ici étant de ne pas exposer au monde nos clé d’accès et ainsi d’éviter que l’on récupère des donnés critiques.
 
-======================================================================================================================
+====================================================================================================
 
 9 - Test unitaires
 
@@ -128,7 +128,7 @@ Pour les lancer : ‘rspec’ ou ‘bundle exec rspec’.
 
 Des tests unitaires ont été effectués sur le model Broker, notamment sur au moment de la création, on a vérifié que les validations étaient bien fonctionnelles.
 
-======================================================================================================================
+====================================================================================================
 
 10 - Limites et prolongements
 
