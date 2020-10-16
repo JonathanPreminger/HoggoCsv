@@ -28,19 +28,29 @@ Pour l’import, utiliser le Csv fourni.
 
 1 - Choix sur le produit
 La fonctionnalité principale de l’app est la cartographie des courtiers en France à partir d’une liste de siren en Csv.
+
 Pour cela l’app nous donne la possibilité d’importer une liste de numéros siren au format Csv.
+
 L’app va ensuite interroger une Api afin de récupérer des données complémentaires relatives notamment à la géolocalisation. 
+
 Parmi les autres informations récupérées on trouve le nom et l'adresse complète du courtier.
+
 Nous avons décidé de ne pas fournir la possibilité de créer, d’éditer ou de supprimer un courtier directement dans l’app : la data venant de sources externes professionnelles il semblait naturel de s’y référer strictement.
+
 Une feature de recherche nous permet de cibler un courtier en particulier.
+
 L’expérience utilisateur est amélioré grâce à l’asynchronisation des requêtes à l’Api.
 À la racine on trouvera la page index.
 
+
 2 - L’importation du CSV
 Comme expliqué juste au-dessus du bouton d’importation, la BrokerApp va, juste après avoir importé le CSV, requêter une Api afin de récupérer des informations complémentaires. 
+
 L’importation se fait en une seule requête sur la base de donnée, ce qui rend l’import très rapide. 
+
 Après l’import nous sommes redirigés sur l’index et un message flash nous indique si tout s’est bien passé ou au contraire si des brokers n’ont pu être importés.
 Le code de l’import se trouve dans un module pour ne pas surcharger le controlleur et lui laisser gérer uniquement les interactions liées aux requêtes.
+
 
 3 - L’asynchronisation des requêtes à l’Api Siren
 La partie requête à l’API se fait par l’intermédiaire d’un worker, et de manière asynchrone, il faut donc faire tourner sidekiq (bundle exec sidekiq) et un serveur redis (redis-server) pour que le worker se lance. 
