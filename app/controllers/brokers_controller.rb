@@ -7,7 +7,7 @@ class BrokersController < ApplicationController
     @results = search(params[:search])
     @brokers = Broker.all
     @locations = []
-    Broker.with_localisation.find_each {|broker| @locations << {lat: broker.latitude,lng: broker.longitude}}
+    Broker.with_localisation.find_each {|broker| @locations << {lat: broker.latitude, lng: broker.longitude, siren: broker.siren}}
   end
 
   def import

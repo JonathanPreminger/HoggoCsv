@@ -10,12 +10,24 @@
   // Note: The code uses the JavaScript Array.prototype.map() method to
   // create an array of markers based on a given "locations" array.
   // The map() method here has nothing to do with the Google Maps API.
+  const infowindow = new google.maps.InfoWindow({
+    content: "yoli",
+  });
+
   const markers = locations.map((location, i) => {
     return new google.maps.Marker({
       position: location,
       label: labels[i % labels.length],
     });
   });
+
+  markers.forEach((marker,index) => {
+      marker.addListener("click", () => {
+        infowindow.setContent(`${locations[index]["siren"]}`);
+        infowindow.open(map, marker);
+      });
+});
+
   // Add a marker clusterer to manage the markers.
 
   new MarkerClusterer(map, markers, {
@@ -26,7 +38,7 @@
   const locations =
   [
   <%@locations.each do |loca|%>
-    {lat:<%=loca.values[0]%>, lng:<%=loca.values[1]%>},
+    {lat:<%=loca.values[0]%>, lng:<%=loca.values[1]%>, siren:<%=loca.values[2]%>},
   <%end%>
     ];
 
