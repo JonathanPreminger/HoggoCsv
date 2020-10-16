@@ -59,7 +59,7 @@ Après l’import nous sommes redirigés sur l’index et un message flash nous 
 
 Le code de l’import se trouve dans un module pour ne pas surcharger le controlleur et lui laisser gérer uniquement les interactions liées aux requêtes.
 
-======================================================================================================================
+=====================================================================================
 
 
 3 - L’asynchronisation des requêtes à l’Api Siren
