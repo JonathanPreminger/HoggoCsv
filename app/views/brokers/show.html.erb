@@ -13,6 +13,7 @@
       <% else %>
         <h5 class="card-title"><%= @broker.name.upcase %></h5>
         <p class="card-text"><%= @broker.address %> </p>
+        <p class="card-text"><%= @broker.division_unite_legale %></p>
       <% end %>
       <p>SIREN : <%= @broker.siren %></p>
       <%= link_to(brokers_path) do %>

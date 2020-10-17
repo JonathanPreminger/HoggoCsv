@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_14_101100) do
+ActiveRecord::Schema.define(version: 2020_10_17_084233) do
 
   create_table "brokers", force: :cascade do |t|
     t.integer "siren"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_101100) do
     t.float "longitude"
     t.string "address"
     t.string "name"
+    t.string "division_unite_legale"
   end
 
 end

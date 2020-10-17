@@ -12,7 +12,13 @@ class InseeApi
       code_postal = request_hash["records"][0]["fields"]["codepostaletablissement"]
       commune = request_hash["records"][0]["fields"]["libellecommuneetablissement"]
       name = request_hash["records"][0]["fields"]["l1_adressage_unitelegale"]
-      Broker.update(broker.id, :latitude => latitude, :longitude => longitude, :address => "#{address} #{code_postal} #{commune}", :name => name )
+      division_unite_legale = request_hash["records"][0]["fields"]["groupeunitelegale"]
+      Broker.update(broker.id,
+        :latitude => latitude,
+        :longitude => longitude,
+        :address => "#{address} #{code_postal} #{commune}",
+        :name => name,
+        :division_unite_legale => division_unite_legale)
     end
   end
 end

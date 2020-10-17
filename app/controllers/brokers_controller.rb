@@ -7,7 +7,7 @@ class BrokersController < ApplicationController
     @results = search(params[:search])
     @brokers = Broker.all
     @locations = []
-    Broker.with_localisation.find_each {|broker| @locations << {lat: broker.latitude, lng: broker.longitude, siren: broker.siren}}
+    Broker.with_localisation.find_each {|broker| @locations << {lat: broker.latitude, lng: broker.longitude, siren: broker.siren, name: broker.name}}
   end
 
   def import
@@ -67,6 +67,6 @@ private
   end
 
   def broker_params
-    params.require(:broker).permit(:siren, :latitude, :longitude)
+    params.require(:broker).permit(:siren, :latitude, :longitude, :division_unite_legale)
   end
 end
