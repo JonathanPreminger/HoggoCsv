@@ -25,6 +25,8 @@ Pour l’import, utiliser le Csv fourni.
 
 10 - Limites et prolongement
 
+11 - Le Scaffolding et le code non utilisé
+
 ====================================================================================================
 
 
@@ -143,6 +145,12 @@ Parmi les solutions que l’on peut proposer :
 La première est d’augmenter les calls jusqu’à 25 000 en mettant des ‘wait’ tous les 25 calls, de façon à ce que l’Api ne bloque pas les calls. L’UX n’en serait pas affecté et ce grâce à l’asynchronisation.
 
 La deuxième est de trigger le call à l’Api au moment d’une recherche (et donc de l’action show). Ainsi un call est effectué à l’Api seulement si le broker en question ne possède pas de champs latitude ou longitude. Cela permet de populate progressivement la bdd au fur et à mesure des recherches. Merci de votre attention.
+
+====================================================================================================
+
+11 - Le Scaffolding et le code non utilisé
+
+Le scaffolding entraine la création de nombreux fichiers parfois non utilisés ou oubliés, ici on a fait le choix de laisser certaines actions non utilisées dans le controller BrokersController partant du constat qu'elle pourraient faire l'objet d'une feature future, après discussion avec le product owner.
 
 Merci de votre attention.
 
